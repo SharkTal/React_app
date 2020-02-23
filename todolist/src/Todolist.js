@@ -1,31 +1,37 @@
 import React, {useState} from 'react';
 
-function Todolist() {
-    const [desc, setDesc] = useState('');
+const Todolist = () => { 
+    const [todo, setTodo] = useState({desc:'', date:''});
     const [todos, setTodos] = useState([]);
 
     const inputChanged = (event) => {
-        setDesc(event.target.value);
-    }
+        setTodo({...todo, [event.target.name] : event.target.value});
+    };
 
     const addTodo = (event) => {
-        event.preventDefault();
-        setTodos([...todos], desc);
-    }
+        
+        setTodos([{desc: todo.desc, date : todo.date}, ...todos]);
+    };
 
     return(
         <div>
-            <input type="text" onChange={inputChanged} value={desc} />
+            Desc: <input type="text" onChange={inputChanged} value={todo.desc} name="desc" />
+            Date: <input type="date" value = {todo.date} name="date" onChange={inputChanged} />
             <button onClick={addTodo}>Add</button>
                 <table>
                     <tbody>
-                        {todos.map(todo => <tr><td>{todo}</td></tr>
+                        {todos.map((item,index) => 
+                            <tr key={index}>
+                                <td>{item.desc}</td>
+                                <td>{item.date}</td>
+                            </tr>
+
                             )
                         }
                     </tbody>
                 </table>
         </div>
-    )
+    );
 }
 
 export default Todolist;
