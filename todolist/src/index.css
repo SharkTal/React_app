@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.inputHolder{
+  color: rgb(31, 177, 31);
+}
+.App{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}

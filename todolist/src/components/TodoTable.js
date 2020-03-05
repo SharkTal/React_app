@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Todolist from './Todolist';
 export default function TodoTable (props){
     return(
         <div>
@@ -11,12 +11,14 @@ export default function TodoTable (props){
                                     <td>{item.desc}</td>
                                     <td>{item.date}</td>
                                     <td><button onClick={() => props.deleteItem(index)} >Delete</button></td>
-                                    <td><button onClick={() => props.changeDesc(index)} >Change Desc</button></td>
+                                    <td><button onClick={() => props.changeDesc(index)}>Change Desc</button></td>
                                 </tr>
                             )
                         }
                     </tbody>
                 </table>
+
+
         </div>
     )
 }
