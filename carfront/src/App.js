@@ -1,19 +1,22 @@
 import React from 'react';
-import Todolist from './components/Todolist';
+import './App.css';
+import Carlist from './components/Carlist';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 function App() {
+ 
   return (
     <div className="App">
-      <AppBar position="static">
+    <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" style={{ textAlign:"right"}}>
-            Add todo
+          
+          <Typography variant="h6">
+            Car shop
           </Typography>
         </Toolbar>
       </AppBar>
-      <Todolist />
+      <Carlist />
     </div>
   );
 }
